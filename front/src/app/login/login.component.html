@@ -1,0 +1,36 @@
+<div class="box">
+  <div class="row justify-content-center">
+    <div class="card cardLogin bg-white">
+      <div class="card-header">Acessar Kanban</div>
+      <div class="card-body">
+        <form [formGroup]="dadosUser" (ngSubmit)="enviaLogin()">
+          <div class="mb-3 text-start">
+            <label for="formGroupExampleInput" class="form-label"
+              >Usuário</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="user"
+              formControlName="login"
+              placeholder="usuario@email.com"
+            />
+          </div>
+          <div class="mb-3 text-start">
+            <label for="formGroupExampleInput2" class="form-label">Senha</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="senha"
+              id="senha"
+              placeholder="Digite sua senha"
+            />
+          </div>
+          <div class="my-3">
+            <button type="submit" class="btn btn-success">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

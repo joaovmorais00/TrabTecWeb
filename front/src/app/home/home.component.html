@@ -1,0 +1,38 @@
+<div class="row row-cols-1 row-cols-md-4">
+  <div class="col mx-0 px-0" *ngFor="let section of sections; index as index">
+    <div class="card bg-transparent border-bottom-0 border-start-0">
+      <div class="card-title text-center mt-3">
+        <h5>{{ section.name }}</h5>
+      </div>
+      <hr class="mx-3 my-0" />
+      <div class="card-body px-5">
+        <app-editable-task
+          *ngIf="section.name === 'New'; else OthersSections"
+          [editing]="false"
+        ></app-editable-task>
+        <ng-template #OthersSections>
+          <div>
+            <app-task
+              *ngFor="let task of section.tasks"
+              [task]="task"
+              [index]="index"
+              [nextSection]="
+                sections[index + 1] ? sections[index + 1].name : ''
+              "
+              [prevSection]="
+                sections[index - 1] ? sections[index - 1].name : ''
+              "
+            ></app-task>
+          </div>
+        </ng-template>
+      </div>
+
+      <!-- <div class="card-body">
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in to
+            additional content. This content is a little bit longer.
+          </p>
+        </div> -->
+    </div>
+  </div>
+</div>

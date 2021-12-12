@@ -1,0 +1,35 @@
+<div class="card bg-white mb-2">
+  <div class="card-body">
+    <form [formGroup]="dadosTask" (ngSubmit)="enviaTask()">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="titulo"
+        id="title"
+        placeholder="Título"
+      />
+      <textarea
+        class="form-control"
+        formControlName="conteudo"
+        id="textArea"
+        rows="3"
+        placeholder="Conteúdo"
+      ></textarea>
+      <button type="submit" class="btn m-0 p-0" *ngIf="!editing">
+        <fa-icon [icon]="faPlusCircle" class="fs-4 colorGreen"></fa-icon>
+      </button>
+
+      <div class="d-flex justify-content-between px-1" *ngIf="editing">
+        <button
+          class="btn m-0 p-0"
+          (click)="this.dadosTask.setValue({ titulo: '', conteudo: '' })"
+        >
+          <fa-icon [icon]="faBan" class="fs-4 colorRed"></fa-icon>
+        </button>
+        <button type="submit" class="btn m-0 p-0">
+          <fa-icon [icon]="faSave" class="fs-4 colorBlue"></fa-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

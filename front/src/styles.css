@@ -1,0 +1,24 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+  text-align: center;
+  background-color: #d9d9d9;
+  height: 100%;
+}
+
+.colorGreen {
+  color: #146b43;
+}
+
+.colorRed {
+  color: #bb1200;
+}
+
+.colorBlue {
+  color: #20169b;
+}
+
+.text-justify {
+  text-align: justify;
+}
